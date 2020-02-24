@@ -1,0 +1,2 @@
+file(GLOB SOURCES . *.c *.cpp)
+set(TEST_SOURCES ${SOURCES} PARENT_SCOPE)
