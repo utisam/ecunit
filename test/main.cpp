@@ -70,11 +70,15 @@ int main() {
 
     ecunit_runnner__run_suite(sample_suite);
 
-    ECUNIT__BEGIN_CASE("No runner (continue even if fail)") {
+    ECUNIT__BEGIN_CASE("No unner (continue even if fail)") {
         // assert is only for test ecunit itself. No need in actual use.
         assert(ECUNIT__ASSERT(1 < 1));
         assert(!ECUNIT__ASSERT(1 < 2));
     } ECUNIT__END_CASE
+
+    ecunit__begin_case("No need to complete in one call stack.");
+    assert(ECUNIT__ASSERT(1 < 1));
+    ecunit__end_case();
 
     ECUNIT__BEGIN_CASE("Signed/Unsigned") {
         assert(!ECUNIT__ASSERT_CMP_INT(numeric_limits<unsigned int>::max(), <, numeric_limits<int>::max()));
