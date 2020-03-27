@@ -14,7 +14,7 @@ jmp_buf* __ecunit__get_p_jmp_buf() {
     return ecunit__config.p_jmp_buf;
 }
 
-void __ecunit__begin_case(const char* name) {
+void ecunit__begin_case(const char* name) {
     ecunit__result.name = name;
     ecunit__result.assertions_begin = ecunit__result.assertions_end = ecunit__config.assertions_buf;
     ecunit__result.assertions_wrapped_at = NULL;
@@ -25,7 +25,7 @@ void __ecunit__begin_case(const char* name) {
     }
 }
 
-void __ecunit__end_case() {
+void ecunit__end_case() {
     if (ecunit__config.on_tear_down) {
         ecunit__config.on_tear_down(&ecunit__result);
     }

@@ -107,10 +107,10 @@ typedef struct {
 void ecunit__init(const ecunit__config_t* config);
 jmp_buf* __ecunit__get_p_jmp_buf();
 
-void __ecunit__begin_case(const char* case_name);
-#define ECUNIT__BEGIN_CASE(NAME) { __ecunit__begin_case(NAME); jmp_buf* p_jmp_buf = __ecunit__get_p_jmp_buf(); if (!p_jmp_buf || setjmp(*p_jmp_buf) == 0)
-void __ecunit__end_case();
-#define ECUNIT__END_CASE __ecunit__end_case(); }
+void ecunit__begin_case(const char* case_name);
+#define ECUNIT__BEGIN_CASE(NAME) { ecunit__begin_case(NAME); jmp_buf* p_jmp_buf = __ecunit__get_p_jmp_buf(); if (!p_jmp_buf || setjmp(*p_jmp_buf) == 0)
+void ecunit__end_case();
+#define ECUNIT__END_CASE ecunit__end_case(); }
 
 bool __ecunit__assert(bool assertion, const char* statement);
 #define ECUNIT__ASSERT(STMT) __ecunit__assert((bool) (STMT), #STMT)
