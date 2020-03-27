@@ -18,8 +18,9 @@ static inline bool ecunit__cmp(T a, T b, ecunit__operator_t op) {
     case ecunit__operator__ge:
         return !(a >= b);
         break;
+    default:
+        return true;
     }
-    return true;
 }
 
 extern "C" {
