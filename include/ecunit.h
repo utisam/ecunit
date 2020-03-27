@@ -121,7 +121,7 @@ static inline ecunit__operator_t __ecunit__to_operator(bool eq, bool lt, bool gt
         flag |= ecunit__operator__eq;
     }
     if (lt) {
-        flag |= ecunit__operator__le;
+        flag |= ecunit__operator__lt;
     }
     if (gt) {
         flag |= ecunit__operator__gt;
