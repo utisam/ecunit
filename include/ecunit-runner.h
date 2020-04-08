@@ -2,7 +2,8 @@
 
 typedef bool (*ecunit_runnner__suite_t)(unsigned int offset, unsigned int index);
 
-#define ECUNIT_RUNNER__BEGIN_SUITE(NAME) bool NAME(unsigned int offset, unsigned int index) { do
+#define ECUNIT_RUNNER__DECL_SUITE(NAME) bool NAME(unsigned int offset, unsigned int index)
+#define ECUNIT_RUNNER__BEGIN_SUITE(NAME) ECUNIT_RUNNER__DECL_SUITE(NAME) { do
 #define ECUNIT_RUNNER__END_SUITE while(false); return false; }
 
 #define ECUNIT_RUNNER__BEGIN_CASE(NAME) if (index == offset++) { ECUNIT__BEGIN_CASE(NAME)
