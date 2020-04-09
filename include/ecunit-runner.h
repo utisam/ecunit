@@ -1,5 +1,7 @@
 #pragma once
 
+#include "ecunit.h"
+
 typedef bool (*ecunit_runnner__suite_t)(unsigned int offset, unsigned int index);
 
 #define ECUNIT_RUNNER__DECL_SUITE(NAME) bool NAME(unsigned int offset, unsigned int index)
