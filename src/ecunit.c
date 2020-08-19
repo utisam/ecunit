@@ -84,7 +84,7 @@ bool __ecunit__assert_cmp_uint(unsigned int a, unsigned int b, ecunit__operator_
         .type = assertion_type__cmp_uint,
         .failed = __ecunit__cmp_uint(a, b, op),
         .detail = {
-            .cmp_int = {
+            .cmp_uint = {
                 .a = a,
                 .b = b,
                 .op = op,
